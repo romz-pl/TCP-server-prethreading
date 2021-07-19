@@ -1,5 +1,7 @@
 #include "err_quit.h"
 
+#include "MAXLINE.h"
+
 #include <stdarg.h>		/* ANSI C header file */
 #include <syslog.h>		/* for syslog() */
 #include <stdlib.h>
@@ -28,7 +30,6 @@ static void
 err_doit(int errnoflag, int level, const char *fmt, va_list ap)
 {
 	int		errno_save, n;
-    const int MAXLINE = 4000;
 	char	buf[MAXLINE + 1];
 
 	errno_save = errno;		/* value caller might want printed */
