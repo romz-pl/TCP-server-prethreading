@@ -2,6 +2,14 @@
 
 The server creates a pool of available threads when it starts, and one thread from the pool handles each client.
 
+## Rationale
+
+On a system that supports threads, it is reasonable to
+expect a speedup by creating a pool of threads when the server starts, instead of
+creating a new thread for every client. The basic design of this server is to create a pool
+of threads and then let each thread call `accept`. Instead of having each thread block in
+the call to `accept`, we will use a mutex lock that allows only
+one thread at a time to call `accept`.
 
 ## References
 
