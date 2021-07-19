@@ -1,4 +1,4 @@
-SET( EXE_NAME dgemm )
+SET( EXE_NAME server )
 
 add_executable( ${EXE_NAME}
     addrlen.c
