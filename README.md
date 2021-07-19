@@ -11,6 +11,17 @@ of threads and then let each thread call `accept`. Instead of having each thread
 the call to `accept`, we will use a mutex lock that allows only
 one thread at a time to call `accept`.
 
+## Berkeley-derived kernel
+
+On a Berkeley-derived kernel, we do not need any locking around the call to `accept` and can
+write a code without any mutex locking and unlocking. Doing so, however,
+increases the process control CPU time. If we look at the two components of the CPU time, the
+user time and the system time, without any locking, the user time decreases (because the locking 
+is done in the threads library, which executes in user space), but the system time increases
+(the kernel’s thundering herd as all threads blocked in accept are awakened when a connection arrives). 
+Since some form of mutual exclusion is required to return each connection to a
+single thread, it is faster for the threads to do this themselves than for the kernel.
+
 ## References
 
 * Warren W. Gay, _Linux Socket Programming by Example_, (2000)
@@ -22,4 +33,6 @@ one thread at a time to call `accept`.
 * W.R. Stevens, B. Fenner, A.M. Rudoff, _UNIX Network Programming_, Volume 1, (2003)
 
 * See also W. Richard Stevens' Home Page http://www.kohala.com/start/
+
+
 
