@@ -30,9 +30,7 @@ single thread, it is faster for the threads to do this themselves than for the k
 
 * M. J. Donahoo, _TCP/IP Sockets in C, Practical Guide for Programmers_, (2001)
 
-* W.R. Stevens, B. Fenner, A.M. Rudoff, _UNIX Network Programming_, Volume 1, (2003)
+* W.R. Stevens, B. Fenner, A.M. Rudoff, _UNIX Network Programming_, Volume 1, (2003) and web site for this book http://www.unpbook.com/
 
 * See also W. Richard Stevens' Home Page http://www.kohala.com/start/
-
-
 
