@@ -9,5 +9,7 @@ project( tcp-server )
 
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -march=native -mtune=native")
 
+SET( CMAKE_EXE_LINKER_FLAGS "-lpthread" )
+
 add_subdirectory( server )
 
