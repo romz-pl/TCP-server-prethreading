@@ -15,5 +15,6 @@ add_executable( ${EXE_NAME}
     tptr.c
     thread_main.c
     web_child.c
+    writen.c
 )
 
