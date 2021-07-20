@@ -73,6 +73,41 @@ make
 4. The final binaries are: `build/src/server` and `build/src/client`.
 
 
+## Exemplary output from server and client
+
+Exemplary output from server console:
+```
+ ./server 9999 5
+thread 1 starting
+thread 0 starting
+thread 4 starting
+thread 2 starting
+thread 3 starting
+^C
+user time = 0, sys time = 0.009712
+thread 0, 19 connections
+thread 1, 21 connections
+thread 2, 17 connections
+thread 3, 15 connections
+thread 4, 18 connections
+```
+
+Exemplary output from client console:
+```
+./client 127.0.0.1 9999 3 10 200
+child 0 done
+child 1 done
+child 2 done
+./client 127.0.0.1 9999 3 10 200
+child 0 done
+child 2 done
+child 1 done
+./client 127.0.0.1 9999 3 10 200
+child 1 done
+child 2 done
+child 0 done
+```
+
 
 ## References
 
