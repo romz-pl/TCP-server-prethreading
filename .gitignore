@@ -1,3 +1,10 @@
+#Vim temporary files end with ~ 
+*~
+
+# Vim also creates swap files that have the swp and swo extensions.
+*.swp
+*.swo
+
 # Prerequisites
 *.d
 
