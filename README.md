@@ -58,7 +58,7 @@ In order to build the system execute the following commands.
 git clone git@github.com:romz-pl/TCP-server-prethreading.git
 ```
 
-2. Create new directory for building purposes
+2. Create new directory for building purposes outside of the source code directory:
 ```
 mkdir build && cd build
 ```
