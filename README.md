@@ -23,7 +23,7 @@ Since some form of mutual exclusion is required to return each connection to a
 single thread, it is faster for the threads to do this themselves than for the kernel.
 
 
-## TCP Test Client
+## TCP Client and TCP Server communication
 
 Each time we run the client, we specify:
 * the hostname or IP address of the server; 
