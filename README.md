@@ -22,6 +22,32 @@ is done in the threads library, which executes in user space), but the system ti
 Since some form of mutual exclusion is required to return each connection to a
 single thread, it is faster for the threads to do this themselves than for the kernel.
 
+
+## TCP Test Client
+
+Each time we run the client, we specify the hostname or IP address of the server, the
+server ’s port, the number of children for the client to `fork` (allowing us to initiate multiple 
+connections to the same server concurrently), the number of requests each child
+should send to the server, and the number of bytes to request the server to return each
+time.
+
+The parent calls `fork` for each child, and each child establishes the specified number 
+of connections with the server. On each connection, the child sends a line specifying
+the number of bytes for the server to return, and then the child reads that amount of
+data from the server. The parent just `wait`s for all the children to terminate. Notice
+that the client closes each TCP connection, so TCP’s `TIME_WAIT` state occurs on the
+client, not on the server. This is a difference between our client/server and normal
+HTTP connections.
+
+For example, executing the client as
+```
+% ./client 192.168.1.20 8888 5 500 4000
+```
+it creates 2,500 TCP connections to the server: 500 connections from each of five children. 
+On each connection, 5 bytes are sent from the client to the server ("4000\n’") and
+4,000 bytes are transferred from the server back to the client.
+
+
 ## References
 
 * Warren W. Gay, _Linux Socket Programming by Example_, (2000)
