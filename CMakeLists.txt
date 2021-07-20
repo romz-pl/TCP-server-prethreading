@@ -11,5 +11,5 @@ set( CMAKE_C_FLAGS "-Wall -Wextra -Wpedantic -march=native -mtune=native" )
 
 SET( CMAKE_EXE_LINKER_FLAGS "-lpthread" )
 
-add_subdirectory( server )
+add_subdirectory( src )
 
