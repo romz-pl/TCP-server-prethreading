@@ -49,6 +49,30 @@ it creates 2,500 TCP connections to the server: 500 connections from each of fiv
 On each connection, 5 bytes are sent from the client to the server ("4000\n’") and
 4,000 bytes are transferred from the server back to the client.
 
+## How to build
+
+In order to build the system execute the following commands.
+
+1.  Clone the repo from github:
+```
+git clone git@github.com:romz-pl/TCP-server-prethreading.git
+```
+
+2. Create new directory for building purposes
+```
+mkdir build && cd build
+```
+
+3. Since the project is build by `cmake`, execute the following two commands
+for configuration, compilation and linking the binaries:
+```
+cmake ../TCP-server-prethreading
+make
+```
+
+4. The final binaries are: `build/src/server` and `build/src/client`.
+
+
 
 ## References
 
