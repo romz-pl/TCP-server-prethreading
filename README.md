@@ -25,11 +25,13 @@ single thread, it is faster for the threads to do this themselves than for the k
 
 ## TCP Test Client
 
-Each time we run the client, we specify the hostname or IP address of the server, the
-server ’s port, the number of children for the client to `fork` (allowing us to initiate multiple 
-connections to the same server concurrently), the number of requests each child
-should send to the server, and the number of bytes to request the server to return each
-time.
+Each time we run the client, we specify:
+* the hostname or IP address of the server; 
+* the server’s port;
+* the number of children for the client to `fork` (allowing us to initiate multiple 
+connections to the same server concurrently); 
+* the number of requests each child should send to the server; 
+* and the number of bytes to request the server to return each time.
 
 The parent calls `fork` for each child, and each child establishes the specified number 
 of connections with the server. On each connection, the child sends a line specifying
