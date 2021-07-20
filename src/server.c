@@ -13,11 +13,9 @@
 #include <unistd.h> 
 
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int		i;
-	void	sig_int(int), thread_make(int);
 
 	if (argc == 3)
     {
@@ -49,3 +47,4 @@ main(int argc, char **argv)
 	for ( ; ; )
 		pause();	/* everything done by threads */
 }
+
